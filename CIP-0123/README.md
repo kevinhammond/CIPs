@@ -89,8 +89,10 @@ the duratino of the partition.
 However, in an extreme situation, the partition may persist beyond the
 Praos rollback limit of *k* blocks (currently 2,160 blocks).  In this case, the nodes
 will not be able to rollback to rejoin the main chain, since this
-would violate the required Praos guarantees.
-
+would violate the required Praos guarantees.  It's reassuring to note
+that usually the minority-stake chains are obligated to roll back, and
+hence the outage would have to last a long while in order for the
+slower partition's chain to grow by more than *k* blocks.
 
 #### Remediations
 
