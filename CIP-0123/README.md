@@ -83,8 +83,8 @@ this situation.  When the partitioned group of nodes reconnects, the
 longest chain will dominate, and the shorter chain will be discarded.
 The nodes on the shorter chain will automatically rollback to the
 point where the fork occurred, and then rejoin the main chain.  This
-is perfectly normal.  Such forks will typically last only a few
-blocks.
+is perfectly normal.  The depth of such forks will be proportional to
+the duratino of the partition.
 
 However, in an extreme situation, the partition may persist beyond the
 Praos rollback limit of *k* blocks (currently 2,160 blocks).  In this case, the nodes
