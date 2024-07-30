@@ -144,9 +144,13 @@ and advise them on how to rejoin the main chain.
 
 #### Timing Considerations
 
-Partitions of less than 2,160 blocks will automatically rejoin the main chain.  With current Cardano settings, this represents
-a period of up to 12 hours during which automatic rollback will occur.  If the partition exceeds 2,160 blocks, then the
-procedure described above will be necessary to allow nodes to rejoin the main chain.
+Partitions of less than 2,160 blocks will automatically rejoin the main chain.
+With current Cardano settings, this implies an outage lasting for up to
+approximately 24 hours could still be resolved via automatic rollback, since
+the worst case minority partition of ~49% stake would almost surely grow half
+as fast as the healthy full network. If a minority partition exceeds 2,160 blocks,
+then the procedure described above will be necessary to allow nodes to rejoin
+the main chain.
 
 
 ### Scenario 2: Failure to Make Blocks for an Extended Period of Time
