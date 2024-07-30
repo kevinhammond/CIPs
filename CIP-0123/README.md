@@ -289,7 +289,7 @@ Provided that it gains sufficient adoption on Mainnet and that
 snapshots continue to be signed by an honest majority of stake pools
 following a chain recovery event, Mithril may therefore provide an
 alternative solution to Ouroboros Genesis checkpoints as a way to
-verify the correct state of the ledger
+verify the correct state of the ledger.
 
 
 ## Recommended Actions
