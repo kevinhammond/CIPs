@@ -155,7 +155,7 @@ the main chain.
 
 ### Scenario 2: Failure to Make Blocks for an Extended Period of Time
 
-Ouroboros Praos requires *at least* one block to be produced every *3k/f* slots.  With the current Cardano mainnet
+The Cardano node requires *at least* one block to be produced every *3k/f* slots.  With the current Cardano mainnet
 settings, that is a 36 hour period.  Such an event is extremely unlikely, but if it were to happen then the network
 would be unable to make any further blocks.
 
