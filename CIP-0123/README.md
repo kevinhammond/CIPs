@@ -207,7 +207,15 @@ could also be used to provide certified snapshots to stake pools as a means to v
 The adoption of Mithril for fast bootstrapping by light clients and edge nodes should help to mitigate risks 
 for the types of users on the network that do not participate in consensus.
 
-Ouroboros Genesis may also provide a remedy (TODO: confirm and describe this).
+Ouroboros Genesis does not itself handle this scenario, since it design
+fundamentally assumes the desired chain is the densest chain. An complete
+outage on mainnet does not necessarily imply that an adversary will never mint
+a chain with non-trivial density in the same interval. Even with enough
+cooperating nodes cooperating to recover a chain with at least 9 blocks per 36
+hours window, a strong adversary has a high probability of being able to later
+share a denser chain, which Ouroboros Genesis would obediently favor. This
+exact scenario was one motivator for the aforementiong lightweight
+checkpointing mechanism that was added alongside Genesis.
 
 
 ### Scenario 3: Bad Blocks Minted on Chain
