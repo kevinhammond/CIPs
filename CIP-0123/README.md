@@ -267,8 +267,12 @@ have elapsed.  In case of doubt, the procedure for Scenario 3.4 should be follow
 
 ### Using Ouroboros Genesis Snapshots
 
-Ouroboros Genesis snapshots can be used to assist with recovery.  TODO: expand this
+Ouroboros Genesis snapshots can be used to assist with recovery.
+These configuration files influence which peers a node uses when catching up to the network.
+As such, it could be usefully abused in order to constrain the upstream peers to a trusted set that have all been configured to not reinsert the bad block.
+Once such a protected chain forks off the bad block by more than 2,160 blocks, the synced peers could not re-select it.
 
+TODO: was that the expected elaboration?
 
 ### Using Mithril Snapshots
 
