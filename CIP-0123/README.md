@@ -233,6 +233,8 @@ the chain would continue to grow at a lower chain density.  SPOs would need to b
 to a suitable node version that would allow the chain to continue.  The chain density would then gradually recover to its normal level.
 Other users would need to upgrade (or downgrade) to a version of the node that could follow the full chain.
 
+Lightweight checkpointing could be used to safeguard against future long-range attacks against this weak portion of the main chain.
+
 **Scenario 3.2**: if no node version was able to process the block and a
 gap of less than *3k/f* slots existed, then the chain could be rolled
 back immediately before the bad block was created, and nodes
@@ -240,6 +242,9 @@ restarted from this point.  The chain would then grow as normal, with a small ga
 In this case, care would need to be taken that the rogue transaction was not accidentally reinserted into the chain.  
 This might involve clearing node mempools, applying filters on the transaction, or developing and deploying a new node version that 
 rejected the bad block.
+
+Lightweight checkpointing could again be used as in Scenario 3.1.
+(TODO: If the checkpoints were slot-based instead of length-based, this mechanism could also be used to prevent a slot from considering *any* block valid, notably the bad block's slot.)
 
 **Scenario 3.3**: an alternative to rolling back would be to develop and deploy a "hot-fix" node that could
 accept the bad block, either as an exception, or as new acceptable behaviour.  
