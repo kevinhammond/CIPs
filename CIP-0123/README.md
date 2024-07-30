@@ -104,10 +104,11 @@ Full node wallets can also be recovered in the same way, though this may require
 skills that the end users do not possess. It may be easier, if slower, for them to simply 
 resynchronize their nodes from the start of the chain (i.e. from the genesis block).
 
-Ouroboros Genesis provides additional resilience when recovering from long lived network partitions. 
-In Praos nodes resyncing from a point before the chain fork could still in some cases follow the 
+Ouroboros Genesis provides additional resilience when recovering from long lived network partitions,
+if the community wants to adopt the chain with the most blocks within the first 36 hours of the outage.
+In Praos, nodes resyncing from a point before the chain fork could still in some cases follow the
 alternative chain (if it is the first one seen) and extra mechanisms may be needed to avoid this 
-possibility. In Praos, for example, this may require that all participants on the alternative chain 
+possibility. With Genesis, this may require, for example, that all participants on the alternative chain
 truncate the local block database prior to the partition being resolved. In Ouroboros Genesis 
 when resyncing from a point before the chain fork, the chain selection rules will ensure 
 selection of the correct path for the main chain assuming the partition has been resolved.
